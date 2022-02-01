@@ -14,27 +14,24 @@ public class Genre {
     private Long genre_id;
 
     @Column
-    private String genre_name;
+    private String name;
 
-    @Column
-    private String genre_description;
+
 
 
     public Genre() {
     }
 
-    public Genre(Long genre_id, String genre_name, String genre_description) {
+    public Genre(Long genre_id, String name) {
         this.genre_id = genre_id;
-        this.genre_name = genre_name;
-        this.genre_description = genre_description;
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Genre{" +
                 "genre_id=" + genre_id +
-                ", genre_name='" + genre_name + '\'' +
-                ", genre_description='" + genre_description + '\'' +
+                ", name='" + name + '\'' +
                 '}';
     }
 
@@ -46,19 +43,12 @@ public class Genre {
         this.genre_id = genre_id;
     }
 
-    public String getGenre_name() {
-        return genre_name;
+    public String getname() {
+        return name;
     }
 
-    public void setGenre_name(String genre_name) {
-        this.genre_name = genre_name;
+    public void setname(String name) {
+        this.name = name;
     }
 
-    public String getGenre_description() {
-        return genre_description;
-    }
-
-    public void setGenre_description(String genre_description) {
-        this.genre_description = genre_description;
-    }
 }

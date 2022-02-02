@@ -1,6 +1,10 @@
 package com.example.publishermanagement.model;
 
 
+
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -11,85 +15,97 @@ public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column
-    private Long author_id;
+    private Long id;
 
     @Column
-    private String author_name;
+    private String name;
 
     @Column
-    private String author_gender;
+    private String gender;
 
 
     @Column
-    private String author_country;
+    private String country;
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH,
-                    CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinTable(name = "book_author",
-            joinColumns = {@JoinColumn(name = "author_id")},
-            inverseJoinColumns = @JoinColumn(name = "book_id"))
+//    @ManyToMany(fetch = FetchType.LAZY,
+//            cascade = {CascadeType.DETACH,
+//                    CascadeType.MERGE, CascadeType.REFRESH})
+//    @JoinTable(name = "book_author",
+//            joinColumns = {@JoinColumn(name = "author_id")},
+//            inverseJoinColumns = @JoinColumn(name = "book_id"))
+//
+//    private List<Book> books;
+//
+//    public List<Book> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<Book> books) {
+//        this.books = books;
+//    }
 
-    private List<Book> books;
+    @OneToMany(mappedBy = "author", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Book> bookList;
 
-    public List<Book> getBooks() {
-        return books;
+    public List<Book> getBookList() {
+        return bookList;
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    public void setBookList(List<Book> bookList) {
+        this.bookList = bookList;
     }
 
     public Author() {
     }
 
-    public Author(Long author_id, String author_name, String author_gender, String author_country) {
-        this.author_id = author_id;
-        this.author_name = author_name;
-        this.author_gender = author_gender;
-        this.author_country = author_country;
+    public Author(Long id, String name, String gender, String country) {
+        this.id = id;
+        this.name = name;
+        this.gender = gender;
+        this.country = country;
 
     }
 
     @Override
     public String toString() {
         return "Author{" +
-                "author_id=" + author_id +
-                ", author_name='" + author_name + '\'' +
-                ", author_gender='" + author_gender + '\'' +
-                ", author_country='" + author_country + '\'' +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", gender='" + gender + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 
-    public Long getAuthor_id() {
-        return author_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setAuthor_id(Long author_id) {
-        this.author_id = author_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getAuthor_name() {
-        return author_name;
+    public String getName() {
+        return name;
     }
 
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAuthor_gender() {
-        return author_gender;
+    public String getGender() {
+        return gender;
     }
 
-    public void setAuthor_gender(String author_gender) {
-        this.author_gender = author_gender;
+    public void setGender(String gender) {
+        this.gender = gender;
     }
 
-    public String getAuthor_country() {
-        return author_country;
+    public String getCountry() {
+        return country;
     }
 
-    public void setAuthor_country(String author_country) {
-        this.author_country = author_country;
+    public void setCountry(String country) {
+        this.country = country;
     }
 }

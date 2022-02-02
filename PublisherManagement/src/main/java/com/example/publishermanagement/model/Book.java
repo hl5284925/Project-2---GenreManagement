@@ -28,35 +28,44 @@ public class Book {
     private String book_year;
 
 
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {CascadeType.DETACH,
-                    CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinTable(name = "book_author",
-            joinColumns = {@JoinColumn(name = "book_id")},
-            inverseJoinColumns = @JoinColumn(name = "author_id"))
-
-    private List<Author> authors;
-
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    public void setAuthors(List<Author> authors) {
-        this.authors = authors;
-    }
-
-//    public List<Author> addAuthor(Author author){
-//        if(authors == null){
-//            authors = new ArrayList<>();
-//            authors.add(author);
-//            return authors;
-//        }
+//    @ManyToMany(fetch = FetchType.LAZY,
+//            cascade = {CascadeType.DETACH,
+//                    CascadeType.MERGE, CascadeType.REFRESH})
+//    @JoinTable(name = "book_author",
+//            joinColumns = {@JoinColumn(name = "book_id")},
+//            inverseJoinColumns = @JoinColumn(name = "author_id"))
 //
+//    private List<Author> authors;
+//
+//    public List<Author> getAuthors() {
+//        return authors;
 //    }
+//
+//    public void setAuthors(List<Author> authors) {
+//        this.authors = authors;
+//    }
+//
+////    public List<Author> addAuthor(Author author){
+////        if(authors == null){
+////            authors = new ArrayList<>();
+////            authors.add(author);
+////            return authors;
+////        }
+////
+////    }
 
+    @JsonIgnore
+    @ManyToOne
+    @JoinColumn(name = "author_id")
+    private Author author;
 
+    public Author getAuthor() {
+        return author;
+    }
 
-
+    public void setAuthor(Author author) {
+        this.author = author;
+    }
 
     @JsonIgnore
     @ManyToOne

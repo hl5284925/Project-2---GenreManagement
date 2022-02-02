@@ -116,9 +116,7 @@ public class GenreController {
 
     }
 
-
-
-
+    
 
     @GetMapping("/genres/{genreId}/movies/")
 

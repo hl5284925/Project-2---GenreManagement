@@ -4,8 +4,8 @@ package com.example.publishermanagement.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "authors")
-public class Author {
+@Table(name = "authorPages")
+public class AuthorPage {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,21 +16,16 @@ public class Author {
     private String author_name;
 
     @Column
-    private String author_gender;
-
-
-    @Column
     private String author_country;
 
-    public Author() {
+
+    public AuthorPage() {
     }
 
-    public Author(Long author_id, String author_name, String author_gender, String author_country) {
+    public AuthorPage(Long author_id, String author_name, String author_country) {
         this.author_id = author_id;
         this.author_name = author_name;
-        this.author_gender = author_gender;
         this.author_country = author_country;
-
     }
 
     @Override
@@ -38,7 +33,6 @@ public class Author {
         return "Author{" +
                 "author_id=" + author_id +
                 ", author_name='" + author_name + '\'' +
-                ", author_gender='" + author_gender + '\'' +
                 ", author_country='" + author_country + '\'' +
                 '}';
     }
@@ -57,14 +51,6 @@ public class Author {
 
     public void setAuthor_name(String author_name) {
         this.author_name = author_name;
-    }
-
-    public String getAuthor_gender() {
-        return author_gender;
-    }
-
-    public void setAuthor_gender(String author_gender) {
-        this.author_gender = author_gender;
     }
 
     public String getAuthor_country() {

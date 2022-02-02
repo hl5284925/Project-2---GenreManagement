@@ -13,6 +13,6 @@ import java.util.Optional;
 
 public interface GenreRepository extends JpaRepository<Genre,Long> {
 
-    Genre findByName(String genre_name);
+    Genre findByGenre_name(String genre_name);
 
 }

@@ -1,10 +1,10 @@
 package com.example.publishermanagement.controller;
 
-import com.example.publishermanagement.exceptions.InformationExistException;
-import com.example.publishermanagement.exceptions.InformationNotFoundException;
+
 import com.example.publishermanagement.model.Book;
 import com.example.publishermanagement.model.Genre;
 
+import com.example.publishermanagement.model.Movie;
 import com.example.publishermanagement.repository.GenreRepository;
 
 import com.example.publishermanagement.service.GenreService;
@@ -28,15 +28,14 @@ public class GenreController {
 
     @Autowired
     private GenreRepository genreRepository;
+
     public void setGenreRepository(GenreRepository genreRepository) {
         this.genreRepository = genreRepository;
     }
 
 
-
     @GetMapping("/hello-world/")
     public String getHelloWorld() {
-
         return "hello world";
     }
 
@@ -116,6 +115,70 @@ public class GenreController {
         return genreService.deleteGenreBook(genreId, bookId);
 
     }
+
+
+
+
+
+    @GetMapping("/genres/{genreId}/movies/")
+
+    public List<Movie> getGenreMovies(@PathVariable(value = "genreId") Long genreId) {
+        return genreService.getGenreMovies(genreId);
+    }
+
+
+    @PostMapping("/genres/{genreId}/movies/")
+
+    public Movie createGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @RequestBody Movie movieObject){
+        return genreService.createGenreMovie(genreId,movieObject);
+
+    }
+
+
+    @GetMapping("/genres/{genreId}/movies/{movieId}/")
+
+    public Movie getGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "movieId") Long movieId){
+        return genreService.getGenreMovie(genreId, movieId);
+    }
+
+
+    @PutMapping("/genres/{genreId}/movies/{movieId}/")
+
+    public Movie updateGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "movieId") Long movieId,
+            @RequestBody Movie movieObject){
+        return genreService.updateGenreMovie(genreId, movieId, movieObject);
+    }
+
+
+    @DeleteMapping("/genres/{genreId}/movies/{movieId}/")
+
+    public Movie deleteGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "movieId") Long movieId){
+        return genreService.deleteGenreMovie(genreId, movieId);
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

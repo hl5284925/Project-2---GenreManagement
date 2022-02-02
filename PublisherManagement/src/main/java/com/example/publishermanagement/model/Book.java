@@ -4,6 +4,8 @@ package com.example.publishermanagement.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 @Entity
@@ -15,36 +17,66 @@ public class Book {
     private Long book_id;
 
     @Column
-    private String book_title;
+    private String name;
 
-    @Column
-    private String author_name;
-
-    @Column
-    private Long genre_id;
 
     @Column
     private String publisher_name;
 
 
-
     @Column
     private String book_year;
+
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,
+                    CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "book_author",
+            joinColumns = {@JoinColumn(name = "book_id")},
+            inverseJoinColumns = @JoinColumn(name = "author_id"))
+
+    private List<Author> authors;
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+//    public List<Author> addAuthor(Author author){
+//        if(authors == null){
+//            authors = new ArrayList<>();
+//            authors.add(author);
+//            return authors;
+//        }
+//
+//    }
+
+
+
+
 
     @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "genre_id")
     private Genre genre;
 
+    public Genre getGenre() {
+        return genre;
+    }
+
+    public void setGenre(Genre genre) {
+        this.genre = genre;
+    }
 
     public Book() {
     }
 
-    public Book(Long book_id, String book_title, String author_name, Long genre_id, String publisher_name, String book_year) {
+    public Book(Long book_id, String name, String publisher_name, String book_year) {
         this.book_id = book_id;
-        this.book_title = book_title;
-        this.author_name = author_name;
-        this.genre_id = genre_id;
+        this.name = name;
         this.publisher_name = publisher_name;
         this.book_year = book_year;
     }
@@ -53,9 +85,7 @@ public class Book {
     public String toString() {
         return "Book{" +
                 "book_id=" + book_id +
-                ", book_title='" + book_title + '\'' +
-                ", author_name='" + author_name + '\'' +
-                ", genre_id='" + genre_id + '\'' +
+                ", name='" + name + '\'' +
                 ", publisher_name='" + publisher_name + '\'' +
                 ", book_year='" + book_year + '\'' +
                 '}';
@@ -69,28 +99,12 @@ public class Book {
         this.book_id = book_id;
     }
 
-    public String getBook_title() {
-        return book_title;
+    public String getName() {
+        return name;
     }
 
-    public void setBook_title(String book_title) {
-        this.book_title = book_title;
-    }
-
-    public String getAuthor_name() {
-        return author_name;
-    }
-
-    public void setAuthor_name(String author_name) {
-        this.author_name = author_name;
-    }
-
-    public Long getGenre_id() {
-        return genre_id;
-    }
-
-    public void setGenre_id(Long genre_id) {
-        this.genre_id = genre_id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getPublisher_name() {
@@ -109,11 +123,5 @@ public class Book {
         this.book_year = book_year;
     }
 
-    public Genre getGenre() {
-        return genre;
-    }
 
-    public void setGenre(Genre genre) {
-        this.genre = genre;
-    }
 }

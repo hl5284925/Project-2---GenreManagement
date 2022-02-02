@@ -2,6 +2,7 @@ package com.example.publishermanagement.model;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "authors")
@@ -21,6 +22,23 @@ public class Author {
 
     @Column
     private String author_country;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {CascadeType.DETACH,
+                    CascadeType.MERGE, CascadeType.REFRESH})
+    @JoinTable(name = "book_author",
+            joinColumns = {@JoinColumn(name = "author_id")},
+            inverseJoinColumns = @JoinColumn(name = "book_id"))
+
+    private List<Book> books;
+
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
+    }
 
     public Author() {
     }

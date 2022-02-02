@@ -18,31 +18,36 @@ public class Genre {
     private Long genre_id;
 
     @Column
-    private String genre_name;
+    private String name;
 
-    @Column
-    private Long author_id;
+
 
     @OneToMany(mappedBy = "genre", orphanRemoval = true)
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Book> bookList;
 
 
+    @OneToMany(mappedBy = "genre", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Movie> movieList;
+
+
+
+
     public Genre() {
     }
 
-    public Genre(Long genre_id, String genre_name,Long author_id ) {
+    public Genre(Long genre_id, String name) {
         this.genre_id = genre_id;
-        this.genre_name = genre_name;
-        this.author_id = author_id;
+        this.name = name;
+
     }
 
     @Override
     public String toString() {
         return "Genre{" +
                 "genre_id=" + genre_id +
-                ", genre_name='" + genre_name + '\'' +
-                ", author_id=" + author_id +
+                ", name='" + name + '\'' +
                 '}';
     }
 
@@ -55,20 +60,12 @@ public class Genre {
     }
 
 
-    public String getGenre_name() {
-        return genre_name;
+    public String getName() {
+        return name;
     }
 
-    public void setGenre_name(String genre_name) {
-        this.genre_name = genre_name;
-    }
-
-    public Long getAuthor_id() {
-        return author_id;
-    }
-
-    public void setAuthor_id(Long author_id) {
-        this.author_id = author_id;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Book> getBookList() {
@@ -78,4 +75,14 @@ public class Genre {
     public void setBookList(List<Book> bookList) {
         this.bookList = bookList;
     }
+
+    public List<Movie> getMovieList() {
+        return movieList;
+    }
+
+    public void setMovieList(List<Movie> movieList) {
+        this.movieList = movieList;
+    }
+
+
 }

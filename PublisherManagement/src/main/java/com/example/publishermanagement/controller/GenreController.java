@@ -116,13 +116,14 @@ public class GenreController {
 
     }
 
-    
+
 
     @GetMapping("/genres/{genreId}/movies/")
 
     public List<Movie> getGenreMovies(@PathVariable(value = "genreId") Long genreId) {
         return genreService.getGenreMovies(genreId);
     }
+
 
 
     @PostMapping("/genres/{genreId}/movies/")

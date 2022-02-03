@@ -36,8 +36,8 @@ PUT */api/genres/genreId/movies/movieId/*	|Update one movie	|Public
 DELETE */api/genres/genreId/movies/movieId/*	|Delete one movie	|Public
 GET */api/genres/genreId/songs/*	|Get all songs|	Public
 CREATE */api/genres/genreId/songs/*	|Create one song|	Public
-GET */api/genres/genreId/movies/songId/*	|Get one song	|Public
-PUT */api/genres/genreId/movies/songId/*	|Update one song	|Public
-DELETE */api/genres/genreId/movies/movieId/*	|Delete one movie	|Public
+GET */api/genres/genreId/songs/songId/*	|Get one song	|Public
+PUT */api/genres/genreId/songs/songId/*	|Update one song	|Public
+DELETE */api/genres/genreId/songs/songId/*	|Delete one song	|Public
 
 

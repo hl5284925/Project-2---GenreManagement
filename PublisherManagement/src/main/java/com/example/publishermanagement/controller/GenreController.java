@@ -107,17 +107,17 @@ public class GenreController {
         return genreService.updateGenreBook(genreId, bookId, bookObject);
     }
 
-//    @DeleteMapping("/genres/{genreId}/books/{bookId}")
-//
-//    public Book deleteGenreBook(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "bookId") Long bookId) {
-//        return genreService.deleteGenreBook(genreId, bookId);
-//
-//    }
-//
-//
-//
+    @DeleteMapping("/genres/{genreId}/books/{bookId}")
+
+    public Book deleteGenreBook(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "bookId") Long bookId) {
+        return genreService.deleteGenreBook(genreId, bookId);
+
+    }
+
+
+
 //    @GetMapping("/genres/{genreId}/movies/")
 //
 //    public List<Movie> getGenreMovies(@PathVariable(value = "genreId") Long genreId) {

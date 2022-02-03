@@ -62,24 +62,24 @@ public class GenreService {
         }
     }
 
-//    public Genre updateGenre(Long genreId, Genre genreObject) {
-//        System.out.println("service calling updateGenre ==>");
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//        if (genre.isPresent()) {
-//            if (genreObject.getName().equals(genre.get().getName())) {
-//
-//                throw new InformationExistException("genre " + genre.get().getName() + " is already exists");
-//            } else {
-//                Genre updateGenre = genreRepository.findById(genreId).get();
-//                updateGenre.setName(genreObject.getName());
-//
-//                return genreRepository.save(updateGenre);
-//            }
-//        } else {
-//            throw new InformationNotFoundException("genre with id " + genreId + " not found");
-//        }
-//    }
-//
+    public Genre updateGenre(Long genreId, Genre genreObject) {
+        System.out.println("service calling updateGenre ==>");
+        Optional<Genre> genre = genreRepository.findById(genreId);
+        if (genre.isPresent()) {
+            if (genreObject.getName().equals(genre.get().getName())) {
+
+                throw new InformationExistException("genre " + genre.get().getName() + " is already exists");
+            } else {
+                Genre updateGenre = genreRepository.findById(genreId).get();
+                updateGenre.setName(genreObject.getName());
+
+                return genreRepository.save(updateGenre);
+            }
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " not found");
+        }
+    }
+
 //    public Optional<Genre> deleteGenre(Long genreId) {
 //        Optional<Genre> genre = genreRepository.findById(genreId);
 //

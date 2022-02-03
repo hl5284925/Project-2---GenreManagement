@@ -156,16 +156,15 @@ public class GenreController {
     }
 
 
-//    @DeleteMapping("/genres/{genreId}/songs/{songId}/")
-//
-//    public Song deleteGenreSong(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "songId") Long songId){
-//        return genreService.deleteGenreSong(genreId, songId);
-//
-//    }
+    @DeleteMapping("/genres/{genreId}/songs/{songId}/")
 
+    public Song deleteGenreSong(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "songId") Long songId){
+        return genreService.deleteGenreSong(genreId, songId);
 
+    }
+    
 
 
 }

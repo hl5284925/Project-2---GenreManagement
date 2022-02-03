@@ -160,23 +160,23 @@ public class GenreService {
 
     }
 
-//    public Book deleteGenreBook(Long genreId, Long bookId) {
-//
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//        if (genre.isPresent()) {
-//            for (Book book : genre.get().getBookList()) {
-//                if (book.getBook_id().equals(bookId)) {
-//                    bookRepository.deleteById(book.getBook_id());
-//                }
-//            }
-//            throw new InformationNotFoundException("book with id " + bookId + " does not exist");
-//        } else {
-//            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
-//
-//        }
-//
-//    }
-//
+    public Book deleteGenreBook(Long genreId, Long bookId) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+        if (genre.isPresent()) {
+            for (Book book : genre.get().getBookList()) {
+                if (book.getBook_id().equals(bookId)) {
+                    bookRepository.deleteById(book.getBook_id());
+                }
+            }
+            throw new InformationNotFoundException("book with id " + bookId + " does not exist");
+        } else {
+            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
+
+        }
+
+    }
+
 //    public List<Movie> getGenreMovies(Long genreId) {
 //        Optional<Genre> genre = genreRepository.findById(genreId);
 //

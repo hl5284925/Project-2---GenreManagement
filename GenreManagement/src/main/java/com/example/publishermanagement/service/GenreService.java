@@ -6,6 +6,7 @@ import com.example.publishermanagement.exceptions.InformationNotFoundException;
 import com.example.publishermanagement.model.Book;
 import com.example.publishermanagement.model.Genre;
 import com.example.publishermanagement.model.Movie;
+import com.example.publishermanagement.model.Song;
 import com.example.publishermanagement.repository.BookRepository;
 import com.example.publishermanagement.repository.GenreRepository;
 import com.example.publishermanagement.repository.MovieRepository;
@@ -260,4 +261,18 @@ public class GenreService {
 
     }
 
+    public List<Song> getGenreSongs(Long genreId) {
+    }
+
+    public Song getGenreSong(Long genreId, Long movieId) {
+    }
+
+    public Song updateGenreSong(Long genreId, Long movieId, Song movieObject) {
+    }
+
+    public Song deleteGenreSong(Long genreId, Long movieId) {
+    }
+
+    public Song createGenreSong(Long genreId, Song movieObject) {
+    }
 }

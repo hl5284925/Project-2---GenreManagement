@@ -119,100 +119,51 @@ public class GenreController {
 
 
 
-    @GetMapping("/genres/{genreId}/musics/")
+    @GetMapping("/genres/{genreId}/songs/")
 
-    public List<Song> getGenreMusics(@PathVariable(value = "genreId") Long genreId) {
-        return genreService.getGenreMovies(genreId);
+    public List<Song> getGenreSongs(@PathVariable(value = "genreId") Long genreId) {
+        return genreService.getGenreSongs(genreId);
     }
-
-
-
-    @PostMapping("/genres/{genreId}/movies/")
-
-    public Movie createGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @RequestBody Movie movieObject){
-        return genreService.createGenreMovie(genreId,movieObject);
-
-    }
-
-
-    @GetMapping("/genres/{genreId}/movies/{movieId}/")
-
-    public Movie getGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @PathVariable(value = "movieId") Long movieId){
-        return genreService.getGenreMovie(genreId, movieId);
-    }
-
-
-    @PutMapping("/genres/{genreId}/movies/{movieId}/")
-
-    public Movie updateGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @PathVariable(value = "movieId") Long movieId,
-            @RequestBody Movie movieObject){
-        return genreService.updateGenreMovie(genreId, movieId, movieObject);
-    }
-
-
-    @DeleteMapping("/genres/{genreId}/movies/{movieId}/")
-
-    public Movie deleteGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @PathVariable(value = "movieId") Long movieId){
-        return genreService.deleteGenreMovie(genreId, movieId);
-
-    }
-
-
-    @GetMapping("/genres/{genreId}/movies/")
-
-    public List<Movie> getGenreMovies(@PathVariable(value = "genreId") Long genreId) {
-        return genreService.getGenreMovies(genreId);
-    }
-
-
-
-    @PostMapping("/genres/{genreId}/movies/")
-
-    public Movie createGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @RequestBody Movie movieObject){
-        return genreService.createGenreMovie(genreId,movieObject);
-
-    }
-
-
-    @GetMapping("/genres/{genreId}/movies/{movieId}/")
-
-    public Movie getGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @PathVariable(value = "movieId") Long movieId){
-        return genreService.getGenreMovie(genreId, movieId);
-    }
-
-
-    @PutMapping("/genres/{genreId}/movies/{movieId}/")
-
-    public Movie updateGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @PathVariable(value = "movieId") Long movieId,
-            @RequestBody Movie movieObject){
-        return genreService.updateGenreMovie(genreId, movieId, movieObject);
-    }
-
-
-    @DeleteMapping("/genres/{genreId}/movies/{movieId}/")
-
-    public Movie deleteGenreMovie(
-            @PathVariable(value = "genreId") Long genreId,
-            @PathVariable(value = "movieId") Long movieId){
-        return genreService.deleteGenreMovie(genreId, movieId);
-
-    }
-
-
+//
+//
+//
+//    @PostMapping("/genres/{genreId}/songs/")
+//
+//    public Song createGenreSong(
+//            @PathVariable(value = "genreId") Long genreId,
+//            @RequestBody Song songObject){
+//        return genreService.createGenreSong(genreId,songObject);
+//
+//    }
+//
+//
+//    @GetMapping("/genres/{genreId}/songs/{songId}/")
+//
+//    public Song getGenreSong(
+//            @PathVariable(value = "genreId") Long genreId,
+//            @PathVariable(value = "songId") Long songId){
+//        return genreService.getGenreSong(genreId, songId);
+//    }
+//
+//
+//    @PutMapping("/genres/{genreId}/songs/{songId}/")
+//
+//    public Song updateGenreSong(
+//            @PathVariable(value = "genreId") Long genreId,
+//            @PathVariable(value = "songId") Long songId,
+//            @RequestBody Song songObject){
+//        return genreService.updateGenreSong(genreId, songId, songObject);
+//    }
+//
+//
+//    @DeleteMapping("/genres/{genreId}/songs/{songId}/")
+//
+//    public Song deleteGenreSong(
+//            @PathVariable(value = "genreId") Long genreId,
+//            @PathVariable(value = "songId") Long songId){
+//        return genreService.deleteGenreSong(genreId, songId);
+//
+//    }
 
 
 

@@ -4,14 +4,7 @@
 
 ## Description
 
- This application is basically for users to check information about genres such as books, movies, and songs. It will perform public CRUD operations.
-
-
-
-
-
-
-
+ This application is basically for users to check information about genres such as books, movies, and songs. It will perform public CRUD operations. Future version will add more features of genres and will also allow users to register and log in.
 
 
 
@@ -130,6 +123,11 @@ DELETE */api/genres/genreId/songs/songId/*	|Delete one song	|Public
 
 
 ## Project Challenges
+1. I did not have a clear mind about the application purpose, and not sure about what I wanted the application to look like. After some brainstorming, research and discussion, I finally decided to start with basic version instead of having a big picture in mind but don't know where to start.
+2. I wanted to create ManytoMany relationship in JPA, did some effort but still did not make it work, so finally gave up this feature in the project, hope I could make it work in future versions.
 
+## Special acknowledgement🤗😊🥰
+⋅⋅* Dhrubo: helped me to brainstorm and think what is my application purpose
+⋅⋅* Julio: gave me advice and ideas about the application features, helped me debug and explain to me whenever I had any issues.
 
 

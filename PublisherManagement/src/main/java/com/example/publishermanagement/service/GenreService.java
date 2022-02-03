@@ -177,17 +177,17 @@ public class GenreService {
 
     }
 
-//    public List<Movie> getGenreMovies(Long genreId) {
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//
-//        if (genre.isPresent()) {
-//            return genre.get().getMovieList();
-//        } else {
-//            throw new InformationNotFoundException("genre with id " + genreId + " not found");
-//        }
-//    }
-//
-//
+    public List<Movie> getGenreMovies(Long genreId) {
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isPresent()) {
+            return genre.get().getMovieList();
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " not found");
+        }
+    }
+
+
 //    public Movie createGenreMovie(Long genreId, Movie movieObject) {
 //
 //        Optional<Genre> genre = genreRepository.findById(genreId);

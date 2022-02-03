@@ -77,12 +77,10 @@ public class GenreService {
 
         if (genre.isPresent()) {
             if (genreObject.getName().equals(genre.get().getName())) {
-
                 throw new InformationExistException("genre " + genre.get().getName() + " already exists");
             } else {
                 Genre updateGenre = genreRepository.findById(genreId).get();
                 updateGenre.setName(genreObject.getName());
-
                 return genreRepository.save(updateGenre);
             }
         } else {

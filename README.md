@@ -55,6 +55,19 @@ GET */api/genres/genreId/songs/songId/*	|Get one song	|Public
 PUT */api/genres/genreId/songs/songId/*	|Update one song	|Public
 DELETE */api/genres/genreId/songs/songId/*	|Delete one song	|Public
 
+
+## System Tools Used
+|   |    |
+|---|--- |
+|  |Spring Boot|
+|  |IntelliJ IDEA 17|
+|  |Postman|
+|  |PgAdmin 4|
+|  |LucidApp|
+| |Github|
+|  |Google |
+
+
 ## User Stories
 ![image](https://user-images.githubusercontent.com/89958717/152399362-99d7596a-fe4f-4d3e-841f-e62bd37b1e67.png)
 

@@ -80,19 +80,19 @@ public class GenreService {
         }
     }
 
-//    public Optional<Genre> deleteGenre(Long genreId) {
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//
-//        if (((Optional<?>) genre).isPresent()) {
-//            genreRepository.deleteById(genreId);
-//            return genre;
-//        } else {
-//            throw new InformationNotFoundException("genre with id " + genreId + " not found");
-//        }
-//
-//    }
-//
-//
+    public Optional<Genre> deleteGenre(Long genreId) {
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (((Optional<?>) genre).isPresent()) {
+            genreRepository.deleteById(genreId);
+            return genre;
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " not found");
+        }
+
+    }
+
+
 //    public List<Book> getGenreBooks(Long genreId) {
 //
 //        Optional<Genre> genre = genreRepository.findById(genreId);

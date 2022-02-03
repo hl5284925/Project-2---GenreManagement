@@ -6,8 +6,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "music")
-public class Music {
+@Table(name = "musics")
+public class Song {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,10 +39,10 @@ public class Music {
         this.genre = genre;
     }
 
-    public Music() {
+    public Song() {
     }
 
-    public Music(Long id, String name, String year, String language) {
+    public Song(Long id, String name, String year, String language) {
         this.id = id;
         this.name = name;
         this.year = year;

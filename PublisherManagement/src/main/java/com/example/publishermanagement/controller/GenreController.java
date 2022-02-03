@@ -155,15 +155,15 @@ public class GenreController {
     }
 
 
-//    @DeleteMapping("/genres/{genreId}/movies/{movieId}/")
-//
-//    public Movie deleteGenreMovie(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "movieId") Long movieId){
-//        return genreService.deleteGenreMovie(genreId, movieId);
-//
-//    }
-//
+    @DeleteMapping("/genres/{genreId}/movies/{movieId}/")
+
+    public Movie deleteGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "movieId") Long movieId){
+        return genreService.deleteGenreMovie(genreId, movieId);
+
+    }
+
 
 
 

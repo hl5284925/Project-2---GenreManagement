@@ -188,25 +188,25 @@ public class GenreService {
     }
 
 
-//    public Movie createGenreMovie(Long genreId, Movie movieObject) {
-//
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//
-//        if (genre.isEmpty()) {
-//            throw new InformationNotFoundException(
-//                    "genre with id " + genreId + " does not exist");
-//        }
-//
-//        Optional<Movie> movie = movieRepository.findByName(movieObject.getName());
-//        if (movie.isPresent()) {
-//            throw new InformationExistException("movie with title " + movieObject.getName() + " already exists");
-//        } else {
-//            movieObject.setGenre(genre.get());
-//            return movieRepository.save(movieObject);
-//        }
-//    }
-//
-//
+    public Movie createGenreMovie(Long genreId, Movie movieObject) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isEmpty()) {
+            throw new InformationNotFoundException(
+                    "genre with id " + genreId + " does not exist");
+        }
+
+        Optional<Movie> movie = movieRepository.findByName(movieObject.getName());
+        if (movie.isPresent()) {
+            throw new InformationExistException("movie with title " + movieObject.getName() + " already exists");
+        } else {
+            movieObject.setGenre(genre.get());
+            return movieRepository.save(movieObject);
+        }
+    }
+
+
 //    public Movie getGenreMovie(Long genreId, Long movieId) {
 //
 //        Optional<Genre> genre = genreRepository.findById(genreId);

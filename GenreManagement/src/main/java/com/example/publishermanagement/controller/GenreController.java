@@ -146,16 +146,16 @@ public class GenreController {
     }
 
 
-//    @PutMapping("/genres/{genreId}/songs/{songId}/")
-//
-//    public Song updateGenreSong(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "songId") Long songId,
-//            @RequestBody Song songObject){
-//        return genreService.updateGenreSong(genreId, songId, songObject);
-//    }
-//
-//
+    @PutMapping("/genres/{genreId}/songs/{songId}/")
+
+    public Song updateGenreSong(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "songId") Long songId,
+            @RequestBody Song songObject){
+        return genreService.updateGenreSong(genreId, songId, songObject);
+    }
+
+
 //    @DeleteMapping("/genres/{genreId}/songs/{songId}/")
 //
 //    public Song deleteGenreSong(

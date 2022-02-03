@@ -99,14 +99,14 @@ public class GenreController {
         return genreService.getGenreBook(genreId, bookId);
     }
 
-//    @PutMapping("/genres/{genreId}/books/{bookId}")
-//    public Book updateGenreBook(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "bookId") Long bookId,
-//            @RequestBody Book bookObject) {
-//        return genreService.updateGenreBook(genreId, bookId, bookObject);
-//    }
-//
+    @PutMapping("/genres/{genreId}/books/{bookId}")
+    public Book updateGenreBook(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "bookId") Long bookId,
+            @RequestBody Book bookObject) {
+        return genreService.updateGenreBook(genreId, bookId, bookObject);
+    }
+
 //    @DeleteMapping("/genres/{genreId}/books/{bookId}")
 //
 //    public Book deleteGenreBook(

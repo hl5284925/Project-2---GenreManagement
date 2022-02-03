@@ -12,6 +12,6 @@ public interface BookRepository extends JpaRepository<Book,Long> {
     Optional<Book> findByName(String book_title);
 
 
-    
+
 
 }

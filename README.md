@@ -58,13 +58,8 @@ DELETE */api/genres/genreId/songs/songId/*	|Delete one song	|Public
 
 ## System Tools Used
 
-<img src="https://user-images.githubusercontent.com/89958717/152427948-80646147-4d15-4570-8339-806bc1becf95.png" width = "500" height="150" />
-<img src="https://user-images.githubusercontent.com/89958717/152431701-b5f8aca0-64e4-445d-82bd-a6ac18eb55fb.png" width = "600" height="150" />
-<img src="https://user-images.githubusercontent.com/89958717/152430541-87b557b6-125d-4714-af33-76f25969f349.png" width = "500" height="200" />
-<img src="https://user-images.githubusercontent.com/89958717/152430854-3eab77d1-6e87-466d-b0cd-6eb32a63c87f.png" width = "500" height="150" />
 
-
-
+|<img src="https://user-images.githubusercontent.com/89958717/152427948-80646147-4d15-4570-8339-806bc1becf95.png" width = "500" height="150" />|<img src="https://user-images.githubusercontent.com/89958717/152431701-b5f8aca0-64e4-445d-82bd-a6ac18eb55fb.png" width = "500" height="150" />|<img src="https://user-images.githubusercontent.com/89958717/152430541-87b557b6-125d-4714-af33-76f25969f349.png" width = "500" height="200" />|<img src="https://user-images.githubusercontent.com/89958717/152430854-3eab77d1-6e87-466d-b0cd-6eb32a63c87f.png" width = "500" height="150" />|<img src="https://user-images.githubusercontent.com/89958717/152438985-672f169a-d21a-42c5-b375-a326b18ac547.png" width = "500" height="150" />|<img src="https://user-images.githubusercontent.com/89958717/152439217-a94ed71d-f6b2-4b9f-a78f-9ab89daa876b.png" width = "400" height="150" />|
 
 
 

@@ -136,15 +136,15 @@ public class GenreController {
     }
 
 
-//    @GetMapping("/genres/{genreId}/movies/{movieId}/")
-//
-//    public Movie getGenreMovie(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "movieId") Long movieId){
-//        return genreService.getGenreMovie(genreId, movieId);
-//    }
-//
-//
+    @GetMapping("/genres/{genreId}/movies/{movieId}/")
+
+    public Movie getGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "movieId") Long movieId){
+        return genreService.getGenreMovie(genreId, movieId);
+    }
+
+
 //    @PutMapping("/genres/{genreId}/movies/{movieId}/")
 //
 //    public Movie updateGenreMovie(

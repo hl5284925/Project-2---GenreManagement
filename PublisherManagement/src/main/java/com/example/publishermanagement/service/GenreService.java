@@ -93,37 +93,37 @@ public class GenreService {
     }
 
 
-//    public List<Book> getGenreBooks(Long genreId) {
-//
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//
-//        if (genre.isPresent()) {
-//            return genre.get().getBookList();
-//        } else {
-//            throw new InformationNotFoundException("genre with id " + genreId + " not found");
-//        }
-//    }
-//
-//
-//    public Book createGenreBook(Long genreId, Book bookObject) {
-//
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//
-//        if (genre.isEmpty()) {
-//            throw new InformationNotFoundException(
-//                    "genre with id " + genreId + " does not exist");
-//        }
-//
-//        Optional<Book> book = bookRepository.findByName(bookObject.getName());
-//        if (book.isPresent()) {
-//            throw new InformationExistException("book with title " + bookObject.getName() + " already exists");
-//        } else {
-//            bookObject.setGenre(genre.get());
-//            return bookRepository.save(bookObject);
-//        }
-//
-//    }
-//
+    public List<Book> getGenreBooks(Long genreId) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isPresent()) {
+            return genre.get().getBookList();
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " not found");
+        }
+    }
+
+
+    public Book createGenreBook(Long genreId, Book bookObject) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isEmpty()) {
+            throw new InformationNotFoundException(
+                    "genre with id " + genreId + " does not exist");
+        }
+
+        Optional<Book> book = bookRepository.findByName(bookObject.getName());
+        if (book.isPresent()) {
+            throw new InformationExistException("book with title " + bookObject.getName() + " already exists");
+        } else {
+            bookObject.setGenre(genre.get());
+            return bookRepository.save(bookObject);
+        }
+
+    }
+
 //    public Book updateGenreBook(Long genreId, Long bookId, Book bookObject) {
 //        Optional<Genre> genre = genreRepository.findById(genreId);
 //        if (genre.isPresent()) {

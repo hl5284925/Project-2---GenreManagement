@@ -124,19 +124,19 @@ public class GenreController {
     public List<Song> getGenreSongs(@PathVariable(value = "genreId") Long genreId) {
         return genreService.getGenreSongs(genreId);
     }
-//
-//
-//
-//    @PostMapping("/genres/{genreId}/songs/")
-//
-//    public Song createGenreSong(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @RequestBody Song songObject){
-//        return genreService.createGenreSong(genreId,songObject);
-//
-//    }
-//
-//
+
+
+
+    @PostMapping("/genres/{genreId}/songs/")
+
+    public Song createGenreSong(
+            @PathVariable(value = "genreId") Long genreId,
+            @RequestBody Song songObject){
+        return genreService.createGenreSong(genreId,songObject);
+
+    }
+
+
 //    @GetMapping("/genres/{genreId}/songs/{songId}/")
 //
 //    public Song getGenreSong(

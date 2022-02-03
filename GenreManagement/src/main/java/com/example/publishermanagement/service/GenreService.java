@@ -194,6 +194,7 @@ public class GenreService {
         } else {
             throw new InformationNotFoundException("genre with id " + genreId + " not found");
         }
+
     }
 
 
@@ -213,6 +214,8 @@ public class GenreService {
             movieObject.setGenre(genre.get());
             return movieRepository.save(movieObject);
         }
+
+
     }
 
 
@@ -268,7 +271,6 @@ public class GenreService {
         }
 
     }
-
 
 
     public List<Song> getGenreSongs(Long genreId) {

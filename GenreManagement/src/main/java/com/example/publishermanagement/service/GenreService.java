@@ -10,11 +10,13 @@ import com.example.publishermanagement.model.Song;
 import com.example.publishermanagement.repository.BookRepository;
 import com.example.publishermanagement.repository.GenreRepository;
 import com.example.publishermanagement.repository.MovieRepository;
+import com.example.publishermanagement.repository.SongRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Properties;
 
 @Service
 public class GenreService {
@@ -22,6 +24,7 @@ public class GenreService {
     private GenreRepository genreRepository;
     private BookRepository bookRepository;
     private MovieRepository movieRepository;
+    private SongRepository songRepository;
 
     @Autowired
     public void setGenreRepository(GenreRepository genreRepository) {
@@ -36,6 +39,11 @@ public class GenreService {
     @Autowired
     public void setMovieRepository(MovieRepository movieRepository) {
         this.movieRepository = movieRepository;
+    }
+
+    @Autowired
+    public void setSongRepository(SongRepository songRepository) {
+        this.songRepository = songRepository;
     }
 
     public List<Genre> getAllGenres() {
@@ -69,7 +77,7 @@ public class GenreService {
         if (genre.isPresent()) {
             if (genreObject.getName().equals(genre.get().getName())) {
 
-                throw new InformationExistException("genre " + genre.get().getName() + " is already exists");
+                throw new InformationExistException("genre " + genre.get().getName() + " already exists");
             } else {
                 Genre updateGenre = genreRepository.findById(genreId).get();
                 updateGenre.setName(genreObject.getName());
@@ -139,7 +147,7 @@ public class GenreService {
             throw new InformationNotFoundException("book with id " + bookId + " does not exist");
 
         } else {
-            throw new InformationNotFoundException("genre with Id " + genreId + " genre does not exist");
+            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
         }
 
     }
@@ -239,7 +247,7 @@ public class GenreService {
             throw new InformationNotFoundException("movie with id " + movieId + " does not exist");
 
         } else {
-            throw new InformationNotFoundException("genre with Id " + genreId + " genre does not exist");
+            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
         }
 
 
@@ -261,6 +269,8 @@ public class GenreService {
 
     }
 
+
+
     public List<Song> getGenreSongs(Long genreId) {
 
         Optional<Genre> genre = genreRepository.findById(genreId);
@@ -272,10 +282,42 @@ public class GenreService {
         }
     }
 
-    public Song getGenreSong(Long genreId, Long movieId) {
+    public Song getGenreSong(Long genreId, Long songId) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isPresent()) {
+            for (Song song : genre.get().getSongList()) {
+                if (song.getId().equals(songId)) {
+                    return songRepository.save(song);
+                }
+            }
+            throw new InformationNotFoundException("song with id " + songId + " does not exist");
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " does not exist");
+        }
+
+
     }
 
-    public Song updateGenreSong(Long genreId, Long movieId, Song movieObject) {
+    public Song updateGenreSong(Long genreId, Long songId, Song songObject) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+        if (genre.isPresent()) {
+            for (Song song : genre.get().getSongList()) {
+                if (song.getId().equals(songId)) {
+                    song.setName(songObject.getName());
+                    song.setYear(songObject.getYear());
+                    song.setLanguage(songObject.getLanguage());
+
+                    return songRepository.save(song);
+                }
+            }
+            throw new InformationNotFoundException("song with id " + songId + " does not exist");
+
+        } else {
+            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
+        }
     }
 
     public Song deleteGenreSong(Long genreId, Long movieId) {

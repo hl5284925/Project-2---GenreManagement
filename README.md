@@ -1,1 +1,21 @@
-# Project-2---backend
+# Project-2---GenreManagement
+
+
+
+
+
+
+
+
+
+
+
+
+
+Endpoints
+
+| Endpoint      | Functionality | Access|
+| ------------- |:-------------:| -----:|
+| col 3 is      | right-aligned | $1600 |
+| col 2 is      | centered      |   $12 |
+| zebra stripes | are neat      |    $1 |

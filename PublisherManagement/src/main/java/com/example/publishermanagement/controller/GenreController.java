@@ -84,21 +84,21 @@ public class GenreController {
         return genreService.getGenreBooks(genreId);
     }
 
-//    @PostMapping("/genres/{genreId}/books")
-//    public Book createGenreBook(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @RequestBody Book bookObject) {
-//        return genreService.createGenreBook(genreId, bookObject);
-//    }
-//
-//
-//    @GetMapping("/genres/{genreId}/books/{bookId}")
-//    public Book getGenreBook(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @PathVariable(value = "bookId") Long bookId) {
-//        return genreService.getGenreBook(genreId, bookId);
-//    }
-//
+    @PostMapping("/genres/{genreId}/books")
+    public Book createGenreBook(
+            @PathVariable(value = "genreId") Long genreId,
+            @RequestBody Book bookObject) {
+        return genreService.createGenreBook(genreId, bookObject);
+    }
+
+
+    @GetMapping("/genres/{genreId}/books/{bookId}")
+    public Book getGenreBook(
+            @PathVariable(value = "genreId") Long genreId,
+            @PathVariable(value = "bookId") Long bookId) {
+        return genreService.getGenreBook(genreId, bookId);
+    }
+
 //    @PutMapping("/genres/{genreId}/books/{bookId}")
 //    public Book updateGenreBook(
 //            @PathVariable(value = "genreId") Long genreId,

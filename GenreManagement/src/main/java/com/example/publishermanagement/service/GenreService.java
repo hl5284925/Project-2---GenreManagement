@@ -282,6 +282,25 @@ public class GenreService {
         }
     }
 
+
+    public Song createGenreSong(Long genreId, Song songObject) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isEmpty()) {
+            throw new InformationNotFoundException(
+                    "genre with id " + genreId + " does not exist");
+        }
+
+        Optional<Song> song = songRepository.findByName(songObject.getName());
+        if (song.isPresent()) {
+            throw new InformationExistException("song with title " + songObject.getName() + " already exists");
+        } else {
+            songObject.setGenre(genre.get());
+            return songRepository.save(songObject);
+        }
+    }
+
     public Song getGenreSong(Long genreId, Long songId) {
 
         Optional<Genre> genre = genreRepository.findById(genreId);
@@ -297,8 +316,8 @@ public class GenreService {
             throw new InformationNotFoundException("genre with id " + genreId + " does not exist");
         }
 
-
     }
+
 
     public Song updateGenreSong(Long genreId, Long songId, Song songObject) {
 
@@ -309,7 +328,6 @@ public class GenreService {
                     song.setName(songObject.getName());
                     song.setYear(songObject.getYear());
                     song.setLanguage(songObject.getLanguage());
-
                     return songRepository.save(song);
                 }
             }
@@ -320,9 +338,20 @@ public class GenreService {
         }
     }
 
-    public Song deleteGenreSong(Long genreId, Long movieId) {
-    }
 
-    public Song createGenreSong(Long genreId, Song movieObject) {
+    public Song deleteGenreSong(Long genreId, Long songId) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+        if (genre.isPresent()) {
+            for (Song song : genre.get().getSongList()) {
+                if (song.getId().equals(songId)) {
+                    songRepository.deleteById(song.getId());
+                }
+            }
+            throw new InformationNotFoundException("song with id " + songId + " does not exist");
+        } else {
+            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
+        }
+
     }
 }

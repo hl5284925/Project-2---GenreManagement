@@ -42,15 +42,15 @@ public class GenreService {
     }
 
 
-//    public Optional getGenre(Long genreId) {
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//        if (genre.isPresent()) {
-//            return genre;
-//        } else {
-//            throw new InformationNotFoundException("genre with id " + genreId + " not found");
-//        }
-//    }
-//
+    public Optional getGenre(Long genreId) {
+        Optional<Genre> genre = genreRepository.findById(genreId);
+        if (genre.isPresent()) {
+            return genre;
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " not found");
+        }
+    }
+
 //    public Genre createGenre(Genre genreObject) {
 //
 //        Genre genre = genreRepository.findByName(genreObject.getName());

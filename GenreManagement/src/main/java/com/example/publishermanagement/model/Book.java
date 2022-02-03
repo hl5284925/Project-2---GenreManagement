@@ -54,18 +54,6 @@ public class Book {
 ////
 ////    }
 
-    @JsonIgnore
-    @ManyToOne
-    @JoinColumn(name = "author_id")
-    private Author author;
-
-    public Author getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Author author) {
-        this.author = author;
-    }
 
     @JsonIgnore
     @ManyToOne

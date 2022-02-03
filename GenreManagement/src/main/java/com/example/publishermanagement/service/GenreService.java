@@ -176,11 +176,12 @@ public class GenreService {
             for (Book book : genre.get().getBookList()) {
                 if (book.getBook_id().equals(bookId)) {
                     bookRepository.deleteById(book.getBook_id());
+                    return book;
                 }
             }
-            throw new InformationNotFoundException("book with id " + bookId + " does not exist");
+            throw new InformationNotFoundException("book with id " + bookId + " not found");
         } else {
-            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
+            throw new InformationNotFoundException("genre with Id " + genreId + " not found");
 
         }
 
@@ -263,11 +264,12 @@ public class GenreService {
             for (Movie movie : genre.get().getMovieList()) {
                 if (movie.getId().equals(movieId)) {
                     movieRepository.deleteById(movie.getId());
+                    return movie;
                 }
             }
-            throw new InformationNotFoundException("movie with id " + movieId + " does not exist");
+            throw new InformationNotFoundException("movie with id " + movieId + " not found");
         } else {
-            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
+            throw new InformationNotFoundException("genre with Id " + genreId + " not found");
         }
 
     }
@@ -348,11 +350,12 @@ public class GenreService {
             for (Song song : genre.get().getSongList()) {
                 if (song.getId().equals(songId)) {
                     songRepository.deleteById(song.getId());
+                    return song;
                 }
             }
-            throw new InformationNotFoundException("song with id " + songId + " does not exist");
+            throw new InformationNotFoundException("song with id " + songId + " not found");
         } else {
-            throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
+            throw new InformationNotFoundException("genre with Id " + genreId + " not found");
         }
 
     }

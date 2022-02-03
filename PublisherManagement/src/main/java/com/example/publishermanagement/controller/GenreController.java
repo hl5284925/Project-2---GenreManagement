@@ -58,13 +58,13 @@ public class GenreController {
         }
     }
 
-//    @PostMapping("/genres/")
-//    public Genre createGenre(@RequestBody Genre genreObject) {
-//
-//        return genreService.createGenre(genreObject);
-//
-//    }
-//
+    @PostMapping("/genres/")
+    public Genre createGenre(@RequestBody Genre genreObject) {
+
+        return genreService.createGenre(genreObject);
+
+    }
+
 //    @PutMapping("/genres/{genreId}/")
 //    public Genre updateGenre(@PathVariable(value = "genreId") Long genreId, @RequestBody Genre genreObject) {
 //

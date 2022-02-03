@@ -31,7 +31,9 @@ public class Genre {
     @LazyCollection(LazyCollectionOption.FALSE)
     private List<Movie> movieList;
 
-
+    @OneToMany(mappedBy = "genre", orphanRemoval = true)
+    @LazyCollection(LazyCollectionOption.FALSE)
+    private List<Song> songList;
 
 
     public Genre() {
@@ -85,4 +87,11 @@ public class Genre {
     }
 
 
+    public List<Song> getSongList() {
+        return songList;
+    }
+
+    public void setSongList(List<Song> songList) {
+        this.songList = songList;
+    }
 }

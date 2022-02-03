@@ -262,6 +262,14 @@ public class GenreService {
     }
 
     public List<Song> getGenreSongs(Long genreId) {
+
+        Optional<Genre> genre = genreRepository.findById(genreId);
+
+        if (genre.isPresent()) {
+            return genre.get().getSongList();
+        } else {
+            throw new InformationNotFoundException("genre with id " + genreId + " not found");
+        }
     }
 
     public Song getGenreSong(Long genreId, Long movieId) {

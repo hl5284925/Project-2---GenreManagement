@@ -223,27 +223,27 @@ public class GenreService {
         }
     }
 
-//    public Movie updateGenreMovie(Long genreId, Long movieId, Movie movieObject) {
-//        Optional<Genre> genre = genreRepository.findById(genreId);
-//        if (genre.isPresent()) {
-//            for (Movie movie : genre.get().getMovieList()) {
-//                if (movie.getId().equals(movieId)) {
-//                    movie.setName(movieObject.getName());
-//                    movie.setYear(movieObject.getYear());
-//                    movie.setDirector(movieObject.getDirector());
-//
-//                    return movieRepository.save(movie);
-//                }
-//            }
-//            throw new InformationNotFoundException("movie with id " + movieId + " does not exist");
-//
-//        } else {
-//            throw new InformationNotFoundException("genre with Id " + genreId + " genre does not exist");
-//        }
-//
-//
-//    }
-//
+    public Movie updateGenreMovie(Long genreId, Long movieId, Movie movieObject) {
+        Optional<Genre> genre = genreRepository.findById(genreId);
+        if (genre.isPresent()) {
+            for (Movie movie : genre.get().getMovieList()) {
+                if (movie.getId().equals(movieId)) {
+                    movie.setName(movieObject.getName());
+                    movie.setYear(movieObject.getYear());
+                    movie.setDirector(movieObject.getDirector());
+
+                    return movieRepository.save(movie);
+                }
+            }
+            throw new InformationNotFoundException("movie with id " + movieId + " does not exist");
+
+        } else {
+            throw new InformationNotFoundException("genre with Id " + genreId + " genre does not exist");
+        }
+
+
+    }
+
 //    public Movie deleteGenreMovie(Long genreId, Long movieId) {
 //
 //        Optional<Genre> genre = genreRepository.findById(genreId);

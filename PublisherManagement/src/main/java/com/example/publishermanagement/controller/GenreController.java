@@ -72,13 +72,13 @@ public class GenreController {
 
     }
 
-//    @DeleteMapping("/genres/{genreId}/")
-//    public Optional<Genre> deleteGenre(@PathVariable(value = "genreId") Long genreId) {
-//
-//        return genreService.deleteGenre(genreId);
-//    }
-//
-//
+    @DeleteMapping("/genres/{genreId}/")
+    public Optional<Genre> deleteGenre(@PathVariable(value = "genreId") Long genreId) {
+
+        return genreService.deleteGenre(genreId);
+    }
+
+
 //    @GetMapping("/genres/{genreId}/books/")
 //    public List<Book> getGenreBooks(@PathVariable(value = "genreId") Long genreId) {
 //        return genreService.getGenreBooks(genreId);

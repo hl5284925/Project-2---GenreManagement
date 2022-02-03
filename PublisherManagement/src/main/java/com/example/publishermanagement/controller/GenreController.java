@@ -46,18 +46,18 @@ public class GenreController {
     }
 
 
-//    @GetMapping("/genres/{genreId}/")
-//    public Optional getGenre(@PathVariable Long genreId) throws Exception {
-//
-//        Optional genre = genreService.getGenre(genreId);
-//
-//        if (genre.isPresent()) {
-//            return genre;
-//        } else {
-//            throw new Exception("genre with id " + genreId + " not found");
-//        }
-//    }
-//
+    @GetMapping("/genres/{genreId}/")
+    public Optional getGenre(@PathVariable Long genreId) throws Exception {
+
+        Optional genre = genreService.getGenre(genreId);
+
+        if (genre.isPresent()) {
+            return genre;
+        } else {
+            throw new Exception("genre with id " + genreId + " not found");
+        }
+    }
+
 //    @PostMapping("/genres/")
 //    public Genre createGenre(@RequestBody Genre genreObject) {
 //

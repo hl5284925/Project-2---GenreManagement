@@ -126,16 +126,16 @@ public class GenreController {
 
 
 
-//    @PostMapping("/genres/{genreId}/movies/")
-//
-//    public Movie createGenreMovie(
-//            @PathVariable(value = "genreId") Long genreId,
-//            @RequestBody Movie movieObject){
-//        return genreService.createGenreMovie(genreId,movieObject);
-//
-//    }
-//
-//
+    @PostMapping("/genres/{genreId}/movies/")
+
+    public Movie createGenreMovie(
+            @PathVariable(value = "genreId") Long genreId,
+            @RequestBody Movie movieObject){
+        return genreService.createGenreMovie(genreId,movieObject);
+
+    }
+
+
 //    @GetMapping("/genres/{genreId}/movies/{movieId}/")
 //
 //    public Movie getGenreMovie(

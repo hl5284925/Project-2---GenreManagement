@@ -4,6 +4,7 @@
 
 
 
+## ERD Diagram (ERD):
 
 
 
@@ -12,10 +13,12 @@
 
 
 
-Endpoints
+
+
+## Endpoints
 
 | Endpoint      | Functionality | Access|
 | ------------- |:-------------:| -----:|
-| col 3 is      | right-aligned | $1600 |
+| GET            | right-aligned | $1600 |
 | col 2 is      | centered      |   $12 |
 | zebra stripes | are neat      |    $1 |

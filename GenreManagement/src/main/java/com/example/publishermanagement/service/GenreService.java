@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Properties;
+
 
 @Service
 public class GenreService {
@@ -51,7 +51,7 @@ public class GenreService {
     }
 
 
-    public Optional getGenre(Long genreId) {
+    public Optional<Genre> getGenre(Long genreId) {
         Optional<Genre> genre = genreRepository.findById(genreId);
         if (genre.isPresent()) {
             return genre;
@@ -72,8 +72,9 @@ public class GenreService {
     }
 
     public Genre updateGenre(Long genreId, Genre genreObject) {
-        System.out.println("service calling updateGenre ==>");
+
         Optional<Genre> genre = genreRepository.findById(genreId);
+
         if (genre.isPresent()) {
             if (genreObject.getName().equals(genre.get().getName())) {
 
@@ -92,13 +93,12 @@ public class GenreService {
     public Optional<Genre> deleteGenre(Long genreId) {
         Optional<Genre> genre = genreRepository.findById(genreId);
 
-        if (((Optional<?>) genre).isPresent()) {
+        if (genre.isPresent()) {
             genreRepository.deleteById(genreId);
             return genre;
         } else {
             throw new InformationNotFoundException("genre with id " + genreId + " not found");
         }
-
     }
 
 
@@ -130,7 +130,6 @@ public class GenreService {
             bookObject.setGenre(genre.get());
             return bookRepository.save(bookObject);
         }
-
     }
 
     public Book updateGenreBook(Long genreId, Long bookId, Book bookObject) {
@@ -149,7 +148,6 @@ public class GenreService {
         } else {
             throw new InformationNotFoundException("genre with Id " + genreId + " does not exist");
         }
-
     }
 
     public Book getGenreBook(Long genreId, Long bookId) {
@@ -166,7 +164,6 @@ public class GenreService {
         } else {
             throw new InformationNotFoundException("genre with id " + genreId + " does not exist");
         }
-
     }
 
     public Book deleteGenreBook(Long genreId, Long bookId) {
@@ -182,9 +179,7 @@ public class GenreService {
             throw new InformationNotFoundException("book with id " + bookId + " not found");
         } else {
             throw new InformationNotFoundException("genre with Id " + genreId + " not found");
-
         }
-
     }
 
     public List<Movie> getGenreMovies(Long genreId) {

@@ -79,11 +79,11 @@ public class GenreController {
     }
 
 
-//    @GetMapping("/genres/{genreId}/books/")
-//    public List<Book> getGenreBooks(@PathVariable(value = "genreId") Long genreId) {
-//        return genreService.getGenreBooks(genreId);
-//    }
-//
+    @GetMapping("/genres/{genreId}/books/")
+    public List<Book> getGenreBooks(@PathVariable(value = "genreId") Long genreId) {
+        return genreService.getGenreBooks(genreId);
+    }
+
 //    @PostMapping("/genres/{genreId}/books")
 //    public Book createGenreBook(
 //            @PathVariable(value = "genreId") Long genreId,

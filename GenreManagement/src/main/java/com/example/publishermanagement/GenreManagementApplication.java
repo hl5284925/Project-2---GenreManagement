@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PublisherManagementApplication {
+public class GenreManagementApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(PublisherManagementApplication.class, args);
+        SpringApplication.run(GenreManagementApplication.class, args);
     }
 
 }

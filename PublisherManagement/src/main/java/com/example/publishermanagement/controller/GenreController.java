@@ -38,14 +38,14 @@ public class GenreController {
     public String getHelloWorld() {
         return "hello world";
     }
-//
-//
-//    @GetMapping("/genres/")
-//    public List<Genre> getAllGenres() {
-//        return genreService.getAllGenres();
-//    }
-//
-//
+
+
+    @GetMapping("/genres/")
+    public List<Genre> getAllGenres() {
+        return genreService.getAllGenres();
+    }
+
+
 //    @GetMapping("/genres/{genreId}/")
 //    public Optional getGenre(@PathVariable Long genreId) throws Exception {
 //

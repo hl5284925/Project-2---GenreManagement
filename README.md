@@ -26,7 +26,7 @@
 
 Endpoint	|Functionality	|Access
 --- | --- | ---
-GET */api/genres/*	Get all genres	Public
-POST */api/genres/*	Create one genre	Public
-PUT */api/genres/genreId/*	Update one genre	Public
-DELETE */api/genres/genreId/*	Delete one genre	Public
+GET */api/genres/*	|Get all genres |	Public
+POST */api/genres/*	|Create one genre|	Public
+PUT */api/genres/genreId/*	|Update one genre |	Public
+DELETE */api/genres/genreId/*	|Delete one genre|	Public

@@ -101,25 +101,25 @@ DELETE */api/genres/genreId/songs/songId/*	|Delete one song	|Public
 |      |
 |--- |
 |1. As a user, I would like to view a list of all the genres.|
-|3. As a user, I would like to create one genre.|
-|4. As a user, I would like to get one genre.|
-|5. As a user, I would like to update one genre.|
-|6. As a user, I would like to delete one genre. |
-|7. As a user, I would like to view a list of all the books.|
-|8. As a user, I would like to create one book.|
-|9. As a user, I would like to get one book.|
-|10. As a user, I would like to update one book.|
-|11. As a user, I would like to delete one book. |
-|12. As a user, I would like to view a list of all the movies.|
-|13. As a user, I would like to create one movie.|
-|14. As a user, I would like to get one movie.|
-|15. As a user, I would like to update one movie.|
-|16. As a user, I would like to delete one movie. |
-|17. As a user, I would like to view a list of all the songs.|
-|18. As a user, I would like to create one song.|
-|19. As a user, I would like to get one song.|
-|20. As a user, I would like to update one song.|
-|21. As a user, I would like to delete one song.|
+|2. As a user, I would like to create one genre.|
+|3. As a user, I would like to get one genre.|
+|4. As a user, I would like to update one genre.|
+|5. As a user, I would like to delete one genre. |
+|6. As a user, I would like to view a list of all the books.|
+|7. As a user, I would like to create one book.|
+|8. As a user, I would like to get one book.|
+|9. As a user, I would like to update one book.|
+|10. As a user, I would like to delete one book. |
+|11. As a user, I would like to view a list of all the movies.|
+|12. As a user, I would like to create one movie.|
+|13. As a user, I would like to get one movie.|
+|14. As a user, I would like to update one movie.|
+|15. As a user, I would like to delete one movie. |
+|16. As a user, I would like to view a list of all the songs.|
+|17. As a user, I would like to create one song.|
+|18. As a user, I would like to get one song.|
+|19. As a user, I would like to update one song.|
+|20. As a user, I would like to delete one song.|
 
 
 ## Project Challenges
